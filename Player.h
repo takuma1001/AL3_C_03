@@ -7,40 +7,34 @@
 #include "WorldTransform.h"
 #include "DirectXCommon.h"
 #include "MathUtilityForText.h"
+#include "Input.h"
 
-class Stage {
+//プレイヤー
+class Player
+{
 public:
-
 	//コンストラクタ
-	Stage();
-	
+	Player();
 	//デストラクタ
-	~Stage();
-	
+	~Player();
 	//初期化
 	void Initialize(ViewProjection viewProjection);
-	
 	//更新
 	void Update();
-
-	//2D背景描画
-	void Draw2DFar();
-
-	//3D表示
+	//3D背景描画
 	void Draw3D();
-	
-private:
 
-	//ビュープロジェクション
+private:
+	//ビュープロジェクション（共通）
 	ViewProjection viewProjection_;
 
-	//BG(スプライト)
-	uint32_t textureHandleBG_ = 0;
-	Sprite* spriteBG_ = nullptr;
-	
-	//ステージ
-	uint32_t textureHandleStage_ = 0;
-	Model* modelStage_ = nullptr;
-	WorldTransform worldTransformStage_;
+    //プレイヤー
+	uint32_t textureHandlePlayer_ = 0;
+	Model* modelPlayer_ = nullptr;
+	WorldTransform worldTransformPlayer_;
 
+	//インプットクラス
+	Input* input_ = nullptr;
 };
+
+
