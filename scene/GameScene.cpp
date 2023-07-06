@@ -6,25 +6,29 @@ GameScene::GameScene() {}
 
 GameScene::~GameScene() { 
 	delete stage_;//ステージ
+	delete player_;//プレイヤー
+	
 }
 
 void GameScene::Initialize() {
 	dxCommon_ = DirectXCommon::GetInstance();
-	input_ = Input::GetInstance();
 	audio_ = Audio::GetInstance();
 
 	stage_ = new Stage();//ステージ
-
+    player_ = new Player();//プレイヤー
 	//各クラスの初期化
 	viewProjection_.translation_.y = 1;
 	viewProjection_.translation_.z = -6;
 	viewProjection_.Initialize();//ビュープロジェクションの初期化
 
 	stage_->Initialize(viewProjection_);//ステージ
+	player_->Initialize(viewProjection_);//プレイヤー
+	
 }
 
 void GameScene::Update() { 
 	stage_->Update();//各クラスの更新
+	player_->Update();
 }
 
 void GameScene::Draw() {
@@ -56,6 +60,7 @@ void GameScene::Draw() {
 	/// ここに3Dオブジェクトの描画処理を追加できる
 	/// </summary>
 	stage_->Draw3D();
+	player_->Draw3D();
 
 	// 3Dオブジェクト描画後処理
 	Model::PostDraw();

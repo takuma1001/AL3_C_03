@@ -9,6 +9,7 @@
 #include "ViewProjection.h"
 #include "WorldTransform.h"
 #include "Stage.h"
+#include "Player.h"
 
 /// <summary>
 /// ゲームシーン
@@ -53,7 +54,8 @@ private: // メンバ変数
 	/// </summary>
 	
 	//各クラス
-	//Sprite* spriteBG_ = nullptr;//背景
+	Sprite* spriteBG_ = nullptr;//背景
 	Stage* stage_ = nullptr;//ステージ
-	
+	Player* player_ = nullptr;//プレイヤー
+
 };
