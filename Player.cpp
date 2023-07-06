@@ -5,7 +5,6 @@ Player::Player() {}
 //デストラクタ
 Player::~Player() { 
 	delete modelPlayer_;//プレイヤー
-
 }
 //初期化
 void Player::Initialize(ViewProjection viewProjection) {

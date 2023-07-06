@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Audio.h"
 #include "DirectXCommon.h"
 #include "Input.h"
@@ -10,6 +9,7 @@
 #include "WorldTransform.h"
 #include "Stage.h"
 #include "Player.h"
+#include "Beam.h"
 
 /// <summary>
 /// ゲームシーン
@@ -57,5 +57,5 @@ private: // メンバ変数
 	Sprite* spriteBG_ = nullptr;//背景
 	Stage* stage_ = nullptr;//ステージ
 	Player* player_ = nullptr;//プレイヤー
-
+	Beam* beam_ = nullptr;//ビーム
 };
